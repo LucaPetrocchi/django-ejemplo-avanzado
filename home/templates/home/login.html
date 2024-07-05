@@ -1,0 +1,30 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+
+<div class="container d-flex justify-content-center align-items-center">
+    <div class="row">
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">
+                    sinsegre al bitio
+                </h3>
+                <div class="card-body">
+                    <form method="POST" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="username">Usuario</label>
+                            <input type="text" class="form-control" id="username" name="username">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="contraseña">
+                            <button type="submit">AAAAAAAAAA</button>
+                        </div>
+                    </form>
+                    <a href="{% url 'register' %}">REGISTRATEEEEEEE</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

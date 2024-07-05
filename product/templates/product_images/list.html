@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+{% load static %}
+{% block content %}
+
+    {% for image in images %}
+        <p>{{image.product}}</p>
+        <img src="{{image.image.url}}">
+        <p>{{image.description}}</p>
+    {% endfor %}
+
+{% endblock %}
+
+{% block extra_js %}
+    <script src="{% static 'product/js/hola_mundo.js' %}"></script>
+{% endblock %}

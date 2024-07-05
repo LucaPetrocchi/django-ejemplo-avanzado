@@ -1,0 +1,23 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="container mt-3">
+    <h2>Detalles de Categoría</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ category.name }}</h5>
+            <a href="{% url 'category_update' category.id %}" class="btn btn-success btn-sm">Editar</a>
+            <a href="{% url 'category_delete' category.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+            <a href="{% url 'category_list' %}" class="btn btn-secondary">Volver a la lista</a>
+        </div>
+        {% for product in category.products.all %}
+            <h4>{{product.id}}</h4>
+            <p>{{product.name}}</p>
+            <p>{{product.price}}</p>
+            <a href="{% url 'product_detail' product.id %}" class="btn btn-info btn-sm">Detalles</a>
+            <a href="{% url 'product_update' product.id %}" class="btn btn-success btn-sm">Editar</a>
+            <a href="{% url 'product_delete' product.id %}" class="btn btn-danger btn-sm">Eliminar</a>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

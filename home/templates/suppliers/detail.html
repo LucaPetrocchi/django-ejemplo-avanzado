@@ -1,0 +1,15 @@
+{% extends "home/base.html" %}
+{% block content %}
+<div class="container mt-3">
+    <h2>Detalles de Proveedor</h2>
+    <div class="card">
+        <div class="card-body">
+            <h5 class="card-title">{{ supplier.name }}</h5>
+            <p> DIRECCIÓN: {{ supplier.address }} </p>
+            <p> TELÉFONO: {{ supplier.phone }} </p>
+            <a href="{% url 'supplier_update' supplier.name %}" class="btn btn-success btn-sm">Editar</a>
+            <a href="{% url 'supplier_list' %}" class="btn btn-secondary">Volver a la lista</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

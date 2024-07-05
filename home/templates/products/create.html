@@ -1,0 +1,20 @@
+{% extends "products/base.html" %}
+{% block content %}
+<div class="container mt-3">
+    <h2>Crear Producto</h2>
+    <form method="post">
+        {% csrf_token %} <!-- PARA TODOS LOS FORMULARIOS -->
+        <label>Nombre</label>
+        {{form.name}}
+        <label>Descripción</label>
+        {{form.description}}
+        <label>Precio</label>
+        {{form.price}}
+        <label>Categoría</label>
+        {{form.category}}
+        <label>Stock</label>
+        {{form.stock}}
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+{% endblock %}
